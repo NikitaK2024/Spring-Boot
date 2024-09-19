@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/hiber</property>
+
+        <property name="connection.username">root</property>
+        <property name="connection.password">root</property>
+        
+         
+        <!-- Specify the SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        
+        
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+        <property name="current_session_context_class">thread</property>
+        
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hbm2ddl.auto">update</property>
+        
+        <!-- Mapping files -->
+      <mapping class="com.demo.Demo.Employee"/>
+       <mapping class="com.demo.Demo.Address"/>
+       <mapping class="com.demo.map.Question"/>
+       <mapping class="com.demo.map.Answer"/>
+       <mapping class="com.hiber.embedd.Student"/>
+       
+          <mapping class="com.demo.manymapp.Student"/>
+            <mapping class="com.demo.manymapp.Course"/>
+             <mapping class="com.demo.manymapp.ManyToManymap"/>
+        
+       
+    </session-factory>
+</hibernate-configuration>
